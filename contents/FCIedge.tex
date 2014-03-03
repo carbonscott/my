@@ -1,0 +1,59 @@
+\chapter{分数陈绝缘体中的边缘激发}
+\label{FCIedge}
+
+\section{数值研究}
+\subsection{边缘激发谱}
+更具体的说，我们选取了两个典型的拓扑平坦能带模型，分别选取具有六重旋转对称性的蝶形几何结构。在该有限尺寸系统中,需要一个额外的势阱来约束FCI/FQAH液滴,而在FCI/FQAH液滴的边缘可以有边缘激发模式围绕蝶形结构传播。
+
+我们研究的第一个模型是六角蜂窝格子上的扩展Haldane模型，在其中填入硬核玻色子，其哈密顿量为：
+\begin{eqnarray}
+H_{\rm HC}= &-&t^{\prime}\sum_{\langle\langle\mathbf{r}\mathbf{r}^{
+\prime}\rangle\rangle}
+\left[b^{\dagger}_{\mathbf{r}^{ \prime}}b_{\mathbf{r}}\exp\left(i\phi_{\mathbf{r}^{ \prime}\mathbf{r}}\right)+\textrm{H.c.}\right]\\
+&-&t\sum_{\langle\mathbf{r}\mathbf{r}^{ \prime}\rangle}
+\left[b^{\dagger}_{\mathbf{r}^{\prime}}b_{\mathbf{r}}+\textrm{H.c.}\right]
+-t^{\prime\prime}\sum_{\langle\langle\langle\mathbf{r}\mathbf{r}^{
+\prime}\rangle\rangle\rangle}
+\left[b^{\dagger}_{\mathbf{r}^{\prime}}b_{\mathbf{r}}+\textrm{H.c.}\right]\nonumber
+\label{eq:HC}
+\end{eqnarray}
+其中$b^{\dagger}_{\mathbf{r}}$为格点$\mathbf{r}$处的硬核玻色子产生算符,  $\langle\dots\rangle$，$\langle\langle\dots\rangle\rangle$ 和 $\langle\langle\langle\dots\rangle\rangle\rangle$ 分别表示最近邻、次近邻以及第三近邻的格点对。选取文献~\cite{YFWang1}中的跃迁参数，我们可以得到一个平坦度为50的拓扑平带，即$t=1$，$t^{\prime}=0.60$, $t^{\prime\prime}=-0.58$ 和 $\phi=0.4\pi$.
+
+我们考虑的第二个模型是kagom\'{e} 格子模型，在其中填入硬核玻色子，其哈密顿量为：
+\begin{eqnarray}
+H_{\rm KG}= &-&t\sum_{\langle\mathbf{r}\mathbf{r}^{ \prime}\rangle}
+\left[b^{\dagger}_{\mathbf{r}^{ \prime}}b_{\mathbf{r}}\exp\left(i\phi_{\mathbf{r}^{ \prime}\mathbf{r}}\right)+\textrm{H.c.}\right]\nonumber\\
+&-&t^{\prime}\sum_{\langle\langle\mathbf{r}\mathbf{r}^{\prime}\rangle\rangle}
+\left[b^{\dagger}_{\mathbf{r}^{\prime}}b_{\mathbf{r}}+\textrm{H.c.}\right]%\nonumber\\
+\label{eq:KG}
+\end{eqnarray}
+选取文献~\cite{RLiu}中的跃迁参数，我们可以得到一个平坦度为20的拓扑平带，即$t=1$, $t^{\prime}=-0.19$, $\phi=0.22\pi$
+
+此前的数值工作已经牢固地确立了环面结构上分数填充拓扑平带的玻色型$\frac{1}{2}$分数量子反常霍尔效应，这些证据包括：准简并的多重基态，较大的体特征能隙图，特征基态动量，以及各个基态的分数量子化的陈数。两个模型的蝶形几何结构都具有六重旋转对称性，如图\ref{disk}所示。为了更好地观测到分数量子霍尔效应的边缘激发谱，我们分别在两个蝶形结构中加入了中心约束势场，使得边缘模式能够在外围传播。这里我们采用了典型的中心谐振势，形式为$V = V_{\rm trap}\sum_{\mathbf{r}} |\mathbf{r}|^2 n_{\mathbf{r}}$，其中$V_{\rm trap}$ 为势场强度（以最近邻跃迁参数$t$作为能量单位), $|{\mathbf{r}}|$ 为蝶形几何中心到格点的半径(以半晶格常数$a/2$作为长度单位),  $n_{\mathbf{r}}$ 为玻色子数目算符。
+
+
+\subsection{中心磁通}
+接下来，我们进一步在蝶形几何中心点加入大小可变的磁通，用以观测边缘态的可压缩性。这里考虑$N_s=42$格点的kagom\'{e}格子模型，并且保持谐振势的强度为$V_{\rm trap}=0.005$。对于$N_b=3$个玻色子的体系，$L= 0, 3$角动量区间的低能边缘态(或 $L= 1, 4$ 和 $L= 2, 5$ 区间的低能态)相互演化，如图\ref{flux}(a)所示：当中心磁通$\Phi$的大小改变$2\pi$时，角动量量子数$L= 0$的低能态（用红色短线表示）与$L= 3$的低能态（用绿色短线表示）相互演化，即$E_n(L+3,\Phi+2\pi)=E_n(L,\Phi)$，其中$L,L+3=0,1,2,\dots\mod 6$。可以看出，改变磁通大小时，低能边缘态无能隙地演化到更高的能级，显示出了边缘态的载流特性（边缘态的可压缩性）。
+
+对于$N_b=4$个玻色子的体系，角动量为$L= 0, 2, 4$（或$L= 1, 3, 5$）的能级如图\ref{flux}(b)相互演化：当中心磁通的大小改变$2\pi$，$4\pi$时，$L= 0$的能级（红色短线表示），$L= 2$的能级（绿色短线表示）与$L= 4$的能级（蓝色短线表示）相互循环演化，即$E_n(L+2,\Phi+2\pi)=E_n(L+4,\Phi+4\pi)=E_n(L,\Phi)$，其中$L,L+2,L+4=0,1,2,\dots\mod 6$。经过三个磁通周期时，各个区间的能态演化回自身，即$E_n(L,\Phi+6\pi)=E_n(L,\Phi)$。对于这里考虑的具有$C_6$旋转对称性的体系，当填充的玻色子数目满足$N_b/6=p/q$（$p$和$q$为互质整数）时，存在一个通用的能谱周期：$E_n(L,\Phi+2q\pi)=E_n(L,\Phi)$。可以从补充材料\cite{supply}看到，这一多体态的演化规律可以定性地从单粒子轨道的图像来理解。
+
+
+\section{理论解释}
+
+\subsection{手征Luttinger液体理论}
+在较大的谐振势强度范围内，我们都在蜂窝格子上的扩展Haldane模型中观测到了明显的边缘激发谱。这里选取了多个不同的小尺寸蝶形结构，分别包括 $N_s = 24, 54, 96$个格点。图\ref{HC_edge}展示了一些典型的结果，从中可以清新地观测到不同玻色子填充数所对应的边缘激发能谱。由于体系具有$C_6$旋转对称性，各个能态都可以用一个角动量量子数$L$来标记，其中$L = 0, 1, 2, 3,..., \mod 6$。可以期待，在有限尺寸的体系中，数值结果得到的不同玻色子数目对应的边缘简并序列，应当与手征Luttinger液体理论相符合。
+
+根据文小刚的流体力学方法，对于填充数为$\frac{1}{2}$的分数量子霍尔效应，其低能边缘激发态由Kac-Moody代数描述，形成用以下有效哈密顿量描述的手征Luttinger液体：
+\begin{equation}\label{eq:Wen}
+   H_{1/m}=2\pi \frac{v}{\nu}\displaystyle\sum_{k>0}\rho_{-k}\rho_k=v\sum_{k>0} k a^{\dagger}_k a_k,
+\end{equation}
+其中$k$为边界上的角动量，$\rho_k$为傅里叶变换后的一维密度算符，满足$[\rho_k,\rho_{k'}]=\frac{\nu}{2\pi}k\delta_{k+k'}$。 $a^{\dagger}_k$和$a_k$是手征玻色子（声子）的产生/堙没算符。基于该理论，手征边缘玻色子占据在角动量为$k=1, 2, 3, 4, 5, 6, ...$ (以 $2\pi/M$ 为单位，其中$M$为边界长度)的单粒子轨道中。我们将其中的占据分布标记为\{$n_1,n_2,n_3,n_4,n_5,n_6$, ...\}，把相对（基态的）总角动量标记为$\Delta L = L - L_{\rm GS}$。对于特定的相对总角动量$\Delta L = \sum_{k} kn_{k}$，我们可以通过数出允许的占据构型的个数，来计算相应的简并度。在热力学极限下，对于足够多的玻色子数目，这一序列应为：1,1,2,3,5,7,11,15,22,...。
+
+对于玻色子数目为$N_b$的情形，可以通过统计$\sum_k n_k\le N_b$的单模态数来确定相应的边缘简并序列。表格\ref{luttinger}中列出了小角动量量子数的占据数构型。可以看到，对于$N_b=3$个玻色子的情形，除去表中$\sum_k n_k>N_b=3$的构型，期望的简并度序列应为1,1,2,3,4,5,7,...，这与我们从严格对角化中得到的数值结果是一致的。同理，对于$N_b=4$个玻色子的情形，除去表中$\sum_k n_k>N_b=4$的构型，期望的简并度序列应为1,1,2,3,5,6,...，这也是与数值结果的证据相符合的。表格\ref{luttinger}的右侧列出了不同玻色子下的简并序列，绝大多数在我们的严格对角化结果中观察到。
+
+下面我们研究kagom\'{e}格子模型。同样地，我们选取了几个不同的尺寸：$N_s =12, 30, 42, 72$，在其中填充硬核玻色子。图显示了$N_s=72$格点的体系相应的边缘谱，这一能谱图甚至得到了比$N_s=96$格点的蜂窝型蝶形结构更好的结果。可以发现，即使在如此小的系统中，边缘激发谱并不依赖具体的晶格结构。对于填充$N_b=6$个玻色子的体系，去除掉$\sum_k n_k > N_b=6$的构型，期望得到的序列是1,1,2,3,5,7,...，正如图\ref{KG_edge}(d)所示。大量的数值结果表明，体系的几何尺寸越大，与理论符合的角动量简并区间越多，这真是有限尺寸效应的表现。
+
+对于这里的两个蝶形几何模型，当填充的玻色子数目不同时，基态的总角动量也不同，即位于不同的角动量区间。我们可以借助广义不相容原理来理解这些数值结果。对于$1/2$量子霍尔效应，广义不相容原理要求填充在连续两个单粒子轨道中的粒子数目不超过1，这一简单的原理使得我们能够更好地理解计算结果。
+
+
+\subsection{广义Pauli原理}
