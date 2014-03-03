@@ -16,8 +16,8 @@
 
 % \usepackage[sectionbib]{chapterbib}%每章都用参考文献
 
-\newboolean{DOIT}%: from ifthen package
-\setboolean{DOIT}{false}%编译某些只想自己看的内容，编译true，否则false
+%\newboolean{DOIT}%: from ifthen package
+%\setboolean{DOIT}{false}%编译某些只想自己看的内容，编译true，否则false
 
 %% 行距缩放因子(x倍字号)
 \renewcommand{\baselinestretch}{1.3}
@@ -75,11 +75,11 @@
 \englishmajor{Condensed matter physics}
 \englishdate{April, 2014}
 
-% 封面
+% 1.封面
 \maketitle
 
 
-% 英文封面
+% 2.英文封面
 \makeenglishtitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -87,15 +87,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \frontmatter
 
-% 摘要
+% 3.摘要
 \include{contents/abstract}
 
-% 目录
+% 4.目录
 \tableofcontents
-% 插图索引
+% 5.插图索引
 \listoffigures
 \addcontentsline{toc}{chapter}{\listfigurename} %将图索引加入全文目录
-% 表格索引
+% 6.表格索引
 \listoftables
 \addcontentsline{toc}{chapter}{\listtablename}  %将表格索引加入全文目录
 
@@ -108,7 +108,7 @@
 \mainmatter
 
 
-%% 各章正文内容
+%% 7.各章正文内容
 \include{contents/introduction}
 \include{contents/models}
 \include{contents/FCIedge}
@@ -136,24 +136,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \backmatter
 
-% 参考文献
+% 8.参考文献
 % 使用 BibTeX
 % 包含参考文献文件.bib
-\bibliography{reference/chap1,reference/chap2}
+\bibliography{reference/}
 
 %% 个人简历(硕士学位论文没有个人简历要求)
 % \include{contents/resume}
 
-% 发表文章目录
-\include{contents/pub}
+% 9.发表文章目录
+\include{contents/publication}
 
-% 致谢
-\include{contents/ack}
+% 10.致谢
+\include{contents/acknowledgement}
 
-% 论文原创性声明和使用授权
+% 11.论文原创性声明和使用授权
+% \include{contents/declaration}
 \makeDeclareOriginal
 \makeDeclareAuthorization
 
+% 12.承诺书
+\include{contents/commitment}
 % 参与项目列表
 %\include{contents/projects}
 
