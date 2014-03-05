@@ -24,7 +24,7 @@
 
 % 设置图形文件的搜索路径
 %\graphicspath{{figure/}{figures/}{logo/}{logos/}{graph/}{graphs}}
-\graphicspath{{figures/}}
+\graphicspath{{figure/}}
 
 %%========================================
 %% 在sjtuthesis.cls中定义的有用命令
@@ -92,12 +92,13 @@
 
 % 4.目录
 \tableofcontents
-% 5.插图索引
-\listoffigures
-\addcontentsline{toc}{chapter}{\listfigurename} %将图索引加入全文目录
-% 6.表格索引
-\listoftables
-\addcontentsline{toc}{chapter}{\listtablename}  %将表格索引加入全文目录
+
+%% 5.插图索引
+%\listoffigures
+%\addcontentsline{toc}{chapter}{\listfigurename} %将图索引加入全文目录
+%% 6.表格索引
+%\listoftables
+%\addcontentsline{toc}{chapter}{\listtablename}  %将表格索引加入全文目录
 
 % 主要符号、缩略词对照表
 %\include{contents/symbol}
@@ -126,6 +127,8 @@
 \renewcommand\thetable{\Alph{chapter}--\arabic{table}}
 
 \include{contents/appendix}
+
+%\include{contents/appendix}
 % \include{contents/app1} % 更新记录
 % \include{contents/app2} % 麦克斯韦方程
 % \include{contents/app3}

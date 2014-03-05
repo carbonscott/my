@@ -149,7 +149,8 @@
   numbers=left,%左侧显示行号
   stepnumber=1,%
   numberstyle=\tiny, %行号字体用小号
-  basicstyle=\footnotesize, %
+% basicstyle=\footnotesize, %
+  basicstyle=\ttfamily\footnotesize, % perfect!
   showspaces=false, %
   flexiblecolumns=true, %
   breaklines=true, %对过长的代码自动换行
@@ -161,11 +162,24 @@
   captionpos=t,
   framextopmargin=2pt,framexbottommargin=2pt,abovecaptionskip=-3pt,belowcaptionskip=3pt,
   xleftmargin=4em,xrightmargin=4em, % 设定listing左右的空白
-  texcl=true,
+% texcl=true, % Error for Python code! If activated, comment line delimiters are printed as usual, but the comment line text (up to the end of A line) is read as LaTEX code and typeset in comment style.
   % 设定中文冲突，断行，列模式，数学环境输入，listing数字的样式
-  extendedchars=false,columns=flexible,mathescape=true
-  numbersep=-1em
+% extendedchars=false,columns=flexible,mathescape=true
+% numbersep=-1em
 }
+
+%\lstset{
+%  language=Python,
+%  showstringspaces=false,
+%  formfeed=\newpage,
+%  breaklines=true, %对过长的代码自动换行
+%  tabsize=4,
+%  commentstyle=\itshape,
+%  basicstyle=\ttfamily,
+%  morekeywords={models, lambda, forms}
+%}
+
+
 \renewcommand{\lstlistingname}{\sjtu@value@listingname} %% 重命名Listings标题头
 
 
