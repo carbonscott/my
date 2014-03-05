@@ -267,22 +267,22 @@
 %   {\fangsong\zihao{4}}
 %   \def\tabcolsep{1pt}
 %   \def\arraystretch{1.5}
-    \begin{tabular}{lc}
-      \heiti\sjtu@label@author &\songti
-      \sjtuunderline[150pt]{\sjtu@value@author}
-    \\
-      \heiti\sjtu@label@studentnumber &\songti
-      \sjtuunderline[150pt]{\sjtu@value@studentnumber}
-    \\
-      \heiti\sjtu@label@advisor &\songti
-      \sjtuunderline[150pt]{\sjtu@value@advisor}
-    \\  
-      \heiti\sjtu@label@major &\songti
-      \sjtuunderline[150pt]{\sjtu@value@major}
-    \\  
-      \heiti\sjtu@label@defenddate &\songti
-      \sjtuunderline[150pt]{\sjtu@value@defenddate}
-    \end{tabular}
+%   \begin{tabular}{lc}
+%     \heiti\sjtu@label@author &\songti
+%     \sjtuunderline[150pt]{\sjtu@value@author}
+%   \\
+%     \heiti\sjtu@label@studentnumber &\songti
+%     \sjtuunderline[150pt]{\sjtu@value@studentnumber}
+%   \\
+%     \heiti\sjtu@label@advisor &\songti
+%     \sjtuunderline[150pt]{\sjtu@value@advisor}
+%   \\  
+%     \heiti\sjtu@label@major &\songti
+%     \sjtuunderline[150pt]{\sjtu@value@major}
+%   \\  
+%     \heiti\sjtu@label@defenddate &\songti
+%     \sjtuunderline[150pt]{\sjtu@value@defenddate}
+%   \end{tabular}
   \end{center}
   \vskip \stretch{0.5}
   \clearpage
@@ -305,25 +305,100 @@
 \newcommand\englishdegree[1]{\def\sjtu@value@englishdegree{#1}}
 \newcommand\englishmajor[1]{\def\sjtu@value@englishmajor{#1}}
 % "绘制"英文标题页
+% \newcommand\makeenglishtitle[1]{%
+%   \cleardoublepage
+%   \thispagestyle{empty}
+%   \begin{center}
+%     {\normalfont\zihao{4} \sjtu@label@englishstatement}
+%     \vspace*{20pt}
+%     \vskip\stretch{1}
+%      {\zihao{-1} \sjtu@value@englishtitle}
+%     \vskip \stretch{1}
+%       {\normalfont\zihao{4} \sjtu@value@englishauthor}
+%     \vskip \stretch{1}
+%       {\normalfont\zihao{4} \sjtu@label@englishadvisor}
+%     \vskip 3pt
+%       {\normalfont\zihao{4} \sjtu@value@englishadvisor}
+%     \vskip \stretch{2}
+%       \normalfont\normalsize \sjtu@value@englishinstitute
+%     \vskip 30pt
+%       \normalfont\normalsize \sjtu@value@englishdate
+%     \vskip 20pt
+%   \end{center}
+%   \clearpage
+%   \if@twoside
+%     \thispagestyle{empty}
+%     \cleardoublepage
+%   \fi
+% }
+
+%%%%%%%%%%%%
+% "绘制"英文标题页
 \newcommand\makeenglishtitle[1]{%
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-    {\normalfont\zihao{4} \sjtu@label@englishstatement}
-    \vspace*{20pt}
-    \vskip\stretch{1}
-     {\zihao{-1} \sjtu@value@englishtitle}
-    \vskip \stretch{1}
-      {\normalfont\zihao{4} \sjtu@value@englishauthor}
-    \vskip \stretch{1}
-      {\normalfont\zihao{4} \sjtu@label@englishadvisor}
-    \vskip 3pt
-      {\normalfont\zihao{4} \sjtu@value@englishadvisor}
-    \vskip \stretch{2}
-      \normalfont\normalsize \sjtu@value@englishinstitute
-    \vskip 30pt
-      \normalfont\normalsize \sjtu@value@englishdate
-    \vskip 20pt
+      \vspace*{0.5cm}
+      \heiti\zihao{-3}
+      浙江师范大学硕士学位论文
+      \vspace*{0.22cm}
+
+      Sc.M. Dissertation of Zhejiang Normal University
+      \vspace*{1.5cm}
+
+      %\kaishu\zihao{-2}
+      \zihao{-2}
+      分数陈绝缘体中的边缘激发效应
+      \vspace*{1.5cm}
+
+      Edge excitations in fractional Chern insulators
+      \vspace*{2cm}
+
+      \kaishu\zihao{-3}
+      硕士研究生: 骆炜炜
+
+      Master Degree Candiate: Wei-Wei Luo
+
+      导师: 王一飞
+
+      Director: Yi-Fei Wang
+      \vspace*{2.55cm}
+      \vfill
+
+      \heiti\zihao{-4}
+      中国 金华 浙江师范大学
+
+      Zhejiang Normal University, Jinhua, China\\
+
+      二〇一四年四月
+
+      April, 2014\\
+
+
+
+
+
+
+
+
+
+
+
+%   {\normalfont\zihao{4} \sjtu@label@englishstatement}
+%   \vspace*{20pt}
+%   \vskip\stretch{1}
+%    {\zihao{-1} \sjtu@value@englishtitle}
+%   \vskip \stretch{1}
+%     {\normalfont\zihao{4} \sjtu@value@englishauthor}
+%   \vskip \stretch{1}
+%     {\normalfont\zihao{4} \sjtu@label@englishadvisor}
+%   \vskip 3pt
+%     {\normalfont\zihao{4} \sjtu@value@englishadvisor}
+%   \vskip \stretch{2}
+%     \normalfont\normalsize \sjtu@value@englishinstitute
+%   \vskip 30pt
+%     \normalfont\normalsize \sjtu@value@englishdate
+%   \vskip 20pt
   \end{center}
   \clearpage
   \if@twoside
@@ -331,6 +406,8 @@
     \cleardoublepage
   \fi
 }
+%%%%%%%%%%%%
+
 
 % 原创性声明
 \newcommand\makeDeclareOriginal{%
