@@ -35,6 +35,9 @@
 \RequirePackage{metalogo} % Some Logo
 \setmainfont{TeX Gyre Termes} %: from fontspec
 
+%: \uline
+\RequirePackage{ulem}
+
 %% 页边距设置
 \oddsidemargin 1.5 true cm
 \if@twoside
@@ -251,28 +254,31 @@
   \thispagestyle{empty}
   \begin{center}
       
-      \kaishu\zihao{3}学校代码 \underline{10345} \hfill 研究类型
-      \underline{基础理论研究}
+      \kaishu\zihao{3}学校代码 \uline{\quad10345\quad} \hfill 研究类型
+      \uline{\quad基础理论研究\quad}
       \vspace{43pt}
 
       \includegraphics{figure/zjnulogo}
       \vspace{43pt}
 
-      \kaishu\zihao{-0} 硕士学位论文
+      \kaishu\zihao{-0} 硕\quad士\quad学\quad位\quad论\quad文
       \vspace{43pt}
 
-      \heiti\zihao{-2} 题目: \underline{分数陈绝缘体中的边缘激发}
-      \vspace{1.5cm}
+      \heiti\zihao{-2} 题\quad目: \uline{分数陈绝缘体中的边缘激发}
+%     \vspace{1.5cm}
+      \vfill
 
       \kaishu\zihao{3}
-      \begin{tabular}[h]{ll}
+%     \begin{tabular}[h]{ll}
           %\multicolumn{2}{c}{Distance from sun (km)} \\
-          学科专业:\underline{凝聚态物理\hfill} \\
-          年级: \underline{2011级} & 学号:\underline{2011210562} \\
-          研究生:\underline{骆炜炜} & 指导教师:\underline{王一飞} \\
-          中图分类号:\underline{0481} &
-          论文提交时间:\underline{2014}年\underline{4}月\underline{1}日
-      \end{tabular}
+          学\quad科\quad专\quad业:\uline{\hfill凝聚态物理\hfill} \\
+          年\qquad\quad级:\uline{\makebox[40mm]{2011级}}\hfill 
+          学\qquad号:\uline{\makebox[40mm]{2011210562}} \\
+          研\quad究\quad生:\uline{\makebox[40mm]{骆炜炜}}\hfill 
+          指导教师:\uline{\makebox[40mm]{王一飞}} \\
+          中图分类号:\uline{\makebox[40mm]{0481}} %\hfill 
+          论文提交时间:\uline{2014}年\uline{4}月\uline{1}日\nolinebreak
+%     \end{tabular}
 
 
 %   \vskip \stretch{1}
@@ -362,7 +368,7 @@
 
       %\kaishu\zihao{-2}
       \zihao{-2}
-      分数陈绝缘体中的边缘激发效应
+      分数陈绝缘体中的边缘激发
       \vspace*{1.5cm}
 
       Edge excitations in fractional Chern insulators
@@ -371,16 +377,16 @@
       \kaishu\zihao{-3}
       硕士研究生: 骆炜炜
 
-      Master Degree Candiate: Wei-Wei Luo
+      Master Degree Candiate: Wei-Wei Luo\\[10mm]
 
       导师: 王一飞
 
       Director: Yi-Fei Wang
-      \vspace*{2.55cm}
+      %\vspace*{2.55cm}
       \vfill
 
-      \heiti\zihao{-4}
-      中国 金华 浙江师范大学
+      \songti\zihao{-4}
+      中国\textbullet金华\textbullet浙江师范大学
 
       Zhejiang Normal University, Jinhua, China\\
 
@@ -425,18 +431,31 @@
 
 % 原创性声明
 \newcommand\makeDeclareOriginal{%
-  \cleardoublepage
-  \thispagestyle{empty}
+    \clearpage
+    \addcontentsline{toc}{chapter}{\sjtu@label@original}
+% \cleardoublepage
+% \thispagestyle{empty}
   \begin{center}
-  {\bf\zihao{3} \sjtu@value@school}\\
   {\bf\zihao{3} \sjtu@label@original}
   \end{center}
   \vskip 10pt
   {\zihao{-4}\sjtu@label@originalcontent}
   \vskip 60pt
-  \hspace{13em}\sjtu@label@authorsign\hrulefill\hspace{1.5em}
-  \vskip 15pt
-  \hspace{16em}\sjtu@label@originalDate\hspace{1em}
+  \sjtu@label@authorsign\qquad\qquad\hfill\sjtu@label@originalDate
+  
+  \vfill
+
+    \addcontentsline{toc}{chapter}{\sjtu@label@authorization}
+  \begin{center}
+  {\bf\zihao{3} \sjtu@label@authorization}
+  \end{center}
+  \vskip 10pt
+  {\zihao{-4} \sjtu@label@authorizationcontent}
+  \vskip 60pt
+  
+  \sjtu@label@authorsign\qquad\qquad\sjtu@label@Supervisorsign\qquad\qquad\hfill
+  \sjtu@label@originalDate
+
   \clearpage
   \if@twoside
     \thispagestyle{empty}
@@ -446,20 +465,42 @@
 
 
 % 授权声明
-\newcommand\makeDeclareAuthorization{%
-  \cleardoublepage
-  \thispagestyle{empty}
+%\newcommand\makeDeclareAuthorization{%
+%  \cleardoublepage
+%  \thispagestyle{empty}
+%  \begin{center}
+%  {\bf\zihao{3} \sjtu@value@school}\\
+%  {\bf\zihao{3} \sjtu@label@authorization}
+%  \end{center}
+%  \vskip 10pt
+%  {\zihao{-4} \sjtu@label@authorizationcontent}
+%  \vskip 60pt
+%  
+%  \sjtu@label@authorsign\hrulefill\hspace{3em}\sjtu@label@Supervisorsign\hrulefill
+%  \vskip 15pt
+%  \sjtu@label@originalDate\hfill\hspace{3em}\sjtu@label@originalDate
+%  \clearpage
+%  \if@twoside
+%    \thispagestyle{empty}
+%    \cleardoublepage
+%  \fi
+%}
+
+
+% 诚信承诺书
+\newcommand{\makeCommitment}{%
+    \clearpage
+    \addcontentsline{toc}{chapter}{\sjtu@label@commitment}
+% \cleardoublepage
+% \thispagestyle{empty}
   \begin{center}
-  {\bf\zihao{3} \sjtu@value@school}\\
-  {\bf\zihao{3} \sjtu@label@authorization}
+  {\bf\zihao{3} \sjtu@label@commitment}
   \end{center}
   \vskip 10pt
-  {\zihao{-4} \sjtu@label@authorizationcontent}
-  \vskip 60pt
-  
-  \sjtu@label@authorsign\hrulefill\hspace{3em}\sjtu@label@Supervisorsign\hrulefill
-  \vskip 15pt
-  \sjtu@label@originalDate\hfill\hspace{3em}\sjtu@label@originalDate
+  {\zihao{-4}\sjtu@label@commitmentcontent}
+% \vskip 60pt
+% \sjtu@label@authorsign\qquad\qquad\hfill\sjtu@label@originalDate
+
   \clearpage
   \if@twoside
     \thispagestyle{empty}
@@ -622,4 +663,4 @@
 %%
 %% End of file `sjtuthesis.cls'.
 
-
+\chapter{

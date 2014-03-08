@@ -1,5 +1,5 @@
 \chapter{分数陈绝缘体中的边缘激发}
-\label{FCIedge}
+\label{sec:FCIedge}
 
 \section{数值研究}
 \subsection{边缘激发谱}
@@ -29,7 +29,21 @@ H_{\rm KG}= &-&t\sum_{\langle\mathbf{r}\mathbf{r}^{ \prime}\rangle}
 \end{eqnarray}
 选取文献~\cite{RLiu}中的跃迁参数，我们可以得到一个平坦度为20的拓扑平带，即$t=1$, $t^{\prime}=-0.19$, $\phi=0.22\pi$
 
-此前的数值工作已经牢固地确立了环面结构上分数填充拓扑平带的玻色型$\frac{1}{2}$分数量子反常霍尔效应，这些证据包括：准简并的多重基态，较大的体特征能隙图，特征基态动量，以及各个基态的分数量子化的陈数。两个模型的蝶形几何结构都具有六重旋转对称性，如图\ref{disk}所示。为了更好地观测到分数量子霍尔效应的边缘激发谱，我们分别在两个蝶形结构中加入了中心约束势场，使得边缘模式能够在外围传播。这里我们采用了典型的中心谐振势，形式为$V = V_{\rm trap}\sum_{\mathbf{r}} |\mathbf{r}|^2 n_{\mathbf{r}}$，其中$V_{\rm trap}$ 为势场强度（以最近邻跃迁参数$t$作为能量单位), $|{\mathbf{r}}|$ 为蝶形几何中心到格点的半径(以半晶格常数$a/2$作为长度单位),  $n_{\mathbf{r}}$ 为玻色子数目算符。
+此前的数值工作已经牢固地确立了环面结构上分数填充拓扑平带的玻色型$\frac{1}{2}$分数量子反常霍尔效应，这些证据包括：准简并的多重基态，较大的体特征能隙图，特征基态动量，以及各个基态的分数量子化的陈数。两个模型的蝶形几何结构都具有六重旋转对称性，如图\ref{fig:disk}。为了更好地观测到分数量子霍尔效应的边缘激发谱，我们分别在两个蝶形结构中加入了中心约束势场，使得边缘模式能够在外围传播。这里我们采用了典型的中心谐振势，形式为$V = V_{\rm trap}\sum_{\mathbf{r}} |\mathbf{r}|^2 n_{\mathbf{r}}$，其中$V_{\rm trap}$ 为势场强度（以最近邻跃迁参数$t$作为能量单位), $|{\mathbf{r}}|$ 为蝶形几何中心到格点的半径(以半晶格常数$a/2$作为长度单位),  $n_{\mathbf{r}}$ 为玻色子数目算符。
+
+\begin{figure}[!tb]
+  \centering
+  \begin{minipage}[c]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{figure/HC96_disk.eps}
+\end{minipage}
+\hfill
+  \begin{minipage}[c]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{figure/KG72_disk.eps}
+\end{minipage}
+  \caption{(color online). (a) The honeycomb-lattice disk and (b) the kagom\'{e}-lattice disk. Both disk geometries satisfy the $C_6$ rotational symmetry. Various disk sizes are indicated by the circles and the labelled numbers.}
+\label{fig:disk}
+\end{figure}
+
 
 
 \subsection{中心磁通}
@@ -41,7 +55,14 @@ H_{\rm KG}= &-&t\sum_{\langle\mathbf{r}\mathbf{r}^{ \prime}\rangle}
 \section{理论解释}
 
 \subsection{手征Luttinger液体理论}
-在较大的谐振势强度范围内，我们都在蜂窝格子上的扩展Haldane模型中观测到了明显的边缘激发谱。这里选取了多个不同的小尺寸蝶形结构，分别包括 $N_s = 24, 54, 96$个格点。图\ref{HC_edge}展示了一些典型的结果，从中可以清新地观测到不同玻色子填充数所对应的边缘激发能谱。由于体系具有$C_6$旋转对称性，各个能态都可以用一个角动量量子数$L$来标记，其中$L = 0, 1, 2, 3,..., \mod 6$。可以期待，在有限尺寸的体系中，数值结果得到的不同玻色子数目对应的边缘简并序列，应当与手征Luttinger液体理论相符合。
+在较大的谐振势强度范围内，我们都在蜂窝格子上的扩展Haldane模型中观测到了明显的边缘激发谱。这里选取了多个不同的小尺寸蝶形结构，分别包括 $N_s = 24, 54, 96$个格点。图\ref{fig:HC_edge}，从中可以清新地观测到不同玻色子填充数所对应的边缘激发能谱。由于体系具有$C_6$旋转对称性，各个能态都可以用一个角动量量子数$L$来标记，其中$L = 0, 1, 2, 3,..., \mod 6$。可以期待，在有限尺寸的体系中，数值结果得到的不同玻色子数目对应的边缘简并序列，应当与手征Luttinger液体理论相符合。
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{{HC96_edge_vtrap_0.0050}.eps}
+  \caption{(color online). Edge excitations on a honeycomb disk with $N_s=96$ sites and trap potential $V_{\rm trap}=0.005$. Numbers labelled upon low energy levels in each sector show the quasi-degeneracy of low edge excitations, which is also the sequence derived from the chiral Luttinger liquid theory.}
+\label{fig:HC_edge}
+\end{figure}
 
 根据文小刚的流体力学方法，对于填充数为$\frac{1}{2}$的分数量子霍尔效应，其低能边缘激发态由Kac-Moody代数描述，形成用以下有效哈密顿量描述的手征Luttinger液体：
 \begin{equation}\label{eq:Wen}
@@ -49,9 +70,56 @@ H_{\rm KG}= &-&t\sum_{\langle\mathbf{r}\mathbf{r}^{ \prime}\rangle}
 \end{equation}
 其中$k$为边界上的角动量，$\rho_k$为傅里叶变换后的一维密度算符，满足$[\rho_k,\rho_{k'}]=\frac{\nu}{2\pi}k\delta_{k+k'}$。 $a^{\dagger}_k$和$a_k$是手征玻色子（声子）的产生/堙没算符。基于该理论，手征边缘玻色子占据在角动量为$k=1, 2, 3, 4, 5, 6, ...$ (以 $2\pi/M$ 为单位，其中$M$为边界长度)的单粒子轨道中。我们将其中的占据分布标记为\{$n_1,n_2,n_3,n_4,n_5,n_6$, ...\}，把相对（基态的）总角动量标记为$\Delta L = L - L_{\rm GS}$。对于特定的相对总角动量$\Delta L = \sum_{k} kn_{k}$，我们可以通过数出允许的占据构型的个数，来计算相应的简并度。在热力学极限下，对于足够多的玻色子数目，这一序列应为：1,1,2,3,5,7,11,15,22,...。
 
-对于玻色子数目为$N_b$的情形，可以通过统计$\sum_k n_k\le N_b$的单模态数来确定相应的边缘简并序列。表格\ref{luttinger}中列出了小角动量量子数的占据数构型。可以看到，对于$N_b=3$个玻色子的情形，除去表中$\sum_k n_k>N_b=3$的构型，期望的简并度序列应为1,1,2,3,4,5,7,...，这与我们从严格对角化中得到的数值结果是一致的。同理，对于$N_b=4$个玻色子的情形，除去表中$\sum_k n_k>N_b=4$的构型，期望的简并度序列应为1,1,2,3,5,6,...，这也是与数值结果的证据相符合的。表格\ref{luttinger}的右侧列出了不同玻色子下的简并序列，绝大多数在我们的严格对角化结果中观察到。
+对于玻色子数目为$N_b$的情形，可以通过统计$\sum_k n_k\le N_b$的单模态数来确定相应的边缘简并序列。表格\ref{luttinger}中列出了小角动量量子数的占据数构型。可以看到，对于$N_b=3$个玻色子的情形，除去表中$\sum_k n_k>N_b=3$的构型，期望的简并度序列应为1,1,2,3,4,5,7,...，这与我们从严格对角化中得到的数值结果是一致的。同理，对于$N_b=4$个玻色子的情形，除去表中$\sum_k n_k>N_b=4$的构型，期望的简并度序列应为1,1,2,3,5,6,...，这也是与数值结果的证据相符合的。表格\ref{tab:luttinger}，绝大多数在我们的严格对角化结果中观察到。
 
-下面我们研究kagom\'{e}格子模型。同样地，我们选取了几个不同的尺寸：$N_s =12, 30, 42, 72$，在其中填充硬核玻色子。图显示了$N_s=72$格点的体系相应的边缘谱，这一能谱图甚至得到了比$N_s=96$格点的蜂窝型蝶形结构更好的结果。可以发现，即使在如此小的系统中，边缘激发谱并不依赖具体的晶格结构。对于填充$N_b=6$个玻色子的体系，去除掉$\sum_k n_k > N_b=6$的构型，期望得到的序列是1,1,2,3,5,7,...，正如图\ref{KG_edge}(d)所示。大量的数值结果表明，体系的几何尺寸越大，与理论符合的角动量简并区间越多，这真是有限尺寸效应的表现。
+\begin{table}[h]
+\centering
+\begin{tabular}{c|l|l c c c c c}
+ \hline
+ \hline
+$\Delta L$ & \{$n_1,n_2,n_3,n_4,n_5,n_6$,...\}        &  &2b &3b &4b &5b &6b  \\
+ \hline
+ \hline
+     0 & \{0,0,0,0,0,0,...\}                          &$d=$  &1 &1 &1 &1  &1  \\
+
+ \hline
+     1 & \{1,0,0,0,0,0,...\}                          &$d=$  &1 &1 &1 &1  &1  \\
+ \hline
+     2 & \{0,1,0,0,0,0,...\},   \{2,0,0,0,0,0,...\}  &$d=$  &2 &2 &2 &2  &2  \\
+ \hline
+     3 & \{0,0,1,0,0,0,...\},   \{1,1,0,0,0,0,...\}  &$d=$  &2 &3 &3 &3  &3  \\
+       & \{3,0,0,0,0,0,...\}                                                 \\
+ \hline
+     4 & \{0,0,0,1,0,0,...\},   \{1,0,1,0,0,0,...\}  &$d=$  &3 &4 &5 &5  &5  \\
+       & \{0,2,0,0,0,0,...\},   \{2,1,0,0,0,0,...\}                         \\
+       & \{4,0,0,0,0,0,...\}                                                 \\
+ \hline
+     5 & \{0,0,0,0,1,0,...\},   \{1,0,0,1,0,0,...\}  &$d=$  &3 &5 &6 &7  &7  \\
+       & \{0,1,1,0,0,0,...\},   \{2,0,1,0,0,0,...\}                         \\
+       & \{1,2,0,0,0,0,...\},   \{3,1,0,0,0,0,...\}                         \\
+       & \{5,0,0,0,0,0,...\},                                                \\
+ \hline
+     6 & \{0,0,0,0,0,1,...\},   \{1,0,0,0,1,0,...\}  &$d=$  &4 &7 &\underline{9} &\underline{10} &\underline{11} \\
+       & \{0,1,0,1,0,0,...\},   \{2,0,0,1,0,0,...\}                         \\
+       & \{0,0,2,0,0,0,...\},   \{1,1,1,0,0,0,...\}                         \\
+       & \{3,0,1,0,0,0,...\},   \{0,3,0,0,0,0,...\}                         \\
+       & \{2,2,0,0,0,0,...\},   \{4,1,0,0,0,0,...\}                         \\
+       & \{6,0,0,0,0,0,...\}                                                 \\
+ \hline
+ \hline
+\end{tabular}
+\caption{Occupation of chiral edge bosons in $k=1, 2, 3, 4, 5, 6,$ ... orbitals: \{$n_1,n_2,n_3,n_4,n_5,n_6$, ...\}. $d$ is the degeneracy of the edge excitations in a sector. $\Delta L = L - L_{\rm GS} = \sum_{k} kn_{k}$, which is the shifted total angular momentum relative to the ground state angular momentum. The right column shows the degeneracy in systems with finite boson numbers, e.g., for the ``4b'' column ($N_b=4$), the predicted degeneracy is  $1, 1, 2, 3, 5, 6, 9, ...$ in $\Delta L=0,1,2,3,4,5,6,...$ angular momentum sectors. The partial degeneracy sequences are mostly observed (except the underlined $\underline{9}$, $\underline{10}$ and $\underline{11}$) in our ED results.}
+\label{tab:luttinger}
+\end{table}
+
+下面我们研究kagom\'{e}格子模型。同样地，我们选取了几个不同的尺寸：$N_s =12, 30, 42, 72$，在其中填充硬核玻色子。图显示了$N_s=72$格点的体系相应的边缘谱，这一能谱图甚至得到了比$N_s=96$格点的蜂窝型蝶形结构更好的结果。可以发现，即使在如此小的系统中，边缘激发谱并不依赖具体的晶格结构。对于填充$N_b=6$个玻色子的体系，去除掉$\sum_k n_k > N_b=6$的构型，期望得到的序列是1,1,2,3,5,7,...，正如图\ref{fig:KG_edge}(d)所示。大量的数值结果表明，体系的几何尺寸越大，与理论符合的角动量简并区间越多，这真是有限尺寸效应的表现。
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{{KG72_edge_vtrap_0.0050}.eps}
+  \caption{(color online). Edge excitations on a kagom\'{e} disk with $N_s=72$ sites and trap potential $V_{\rm trap}=0.005$. Numbers labelled upon low energy levels in each sector show the quasi-degeneracy of low edge excitations, which is also the sequence derived from the chiral Luttinger liquid theory.}
+\label{fig:KG_edge}
+\end{figure}
 
 对于这里的两个蝶形几何模型，当填充的玻色子数目不同时，基态的总角动量也不同，即位于不同的角动量区间。我们可以借助广义不相容原理来理解这些数值结果。对于$1/2$量子霍尔效应，广义不相容原理要求填充在连续两个单粒子轨道中的粒子数目不超过1，这一简单的原理使得我们能够更好地理解计算结果。
 
