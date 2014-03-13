@@ -3,33 +3,123 @@
 % 如何得到平带；如何计算陈数
 在这一章节，我们呈现了两个典型的拓扑平坦能带模型，分别计算了各个能带的陈数，以及模型所能得到的能带平坦度。这两个模型是本文用来研究分数陈绝缘体的单体哈密顿量。
 
+
+\section{陈数的计算}
+零温下的霍尔电导，可以用Kubo公式~\cite{Thouless1982}进行计算：
+\begin{eqnarray}
+    \sigma_{\rm
+H}({E})&=&\frac{{i}e^{2}\hbar}{{A}_0}\sum_{{\cal
+E}_{{m\mathbf{k}}}<E}\sum_{{\cal E}_{{n\mathbf{k}}}>E}\nonumber\\%\nonumber
+&&\frac{\langle{m\mathbf{k}}|{v}_{{x}}|{n\mathbf{k}}\rangle\langle{n\mathbf{k}}|{v}_{{y}}|{m\mathbf{k}}\rangle
+-\langle{m\mathbf{k}}|{v}_{{y}}|{n\mathbf{k}}\rangle\langle{n\mathbf{k}}|{v}_{{x}}|{m\mathbf{k}}\rangle}{({\cal
+E}_{{m\mathbf{k}}}-{\cal E}_{{n\mathbf{k}}})^{2}}
+\label{eq:kubo1}
+\end{eqnarray}
+其中$A_{0}$是系统所占的面积，$E$为费米能级，${\cal E}_{m\mathbf{k}}$和$|m\mathbf{k}\rangle$分别为体系哈密顿量的本征值与本征函数。对$\mathbf{k}$的求和遍及这个第一布里渊区。
+
+由于上式\ref{eq:kubo1}涉及到速度算符$v_{\tau}$对波函数的求导，应当给波函数选取一个平滑的相位规范。这一规范的要求限制了\ref{eq:kubo1}式在实际数值计算中的应用。下面介绍一种规范不变的形式，引入$v_{\tau}(\mathbf{k})=\frac{1}{\hbar}\frac{\partial{H_{\mathbf{k}}}}{\partial{k_{\tau}}}$，我们可以把Kubo公式重新写成以下规范不变的形式：
+\begin{eqnarray}
+    \sigma_{\rm
+H}({E})&=&\frac{{i}e^{2}}{{A}_0\hbar}\sum_{{\cal
+E}_{{m\mathbf{k}}}<E}\sum_{{\cal E}_{{n\mathbf{k}}}>E}\nonumber\\%\nonumber
+&&\frac{\langle{m\mathbf{k}}|\frac{\partial{H}}{\partial{k_{x}}}|{n\mathbf{k}}\rangle\langle{n\mathbf{k}}|\frac{\partial{H}}{\partial{k_{y}}}|{m\mathbf{k}}\rangle
+-\langle{m\mathbf{k}}|\frac{\partial{H}}{\partial{k_{y}}}|{n\mathbf{k}}\rangle\langle{n\mathbf{k}}|\frac{\partial{H}}{\partial{k_{x}}}|{m\mathbf{k}}\rangle}{({\cal
+E}_{{m\mathbf{k}}}-{\cal E}_{{n\mathbf{k}}})^{2}}
+\label{eq:kubo2}
+\end{eqnarray}
+
+Thouless等人~\cite{Thouless1982}在1982年提出，量子霍尔效应之所以存在霍尔平台，是由于实际的观测量与拓扑不变量相关联，也就是霍尔电导与陈数相关联。可以证明，霍尔电导可以写成如下形式：
+\begin{equation*}
+    \sigma_{\rm
+H}({E})=\sum_{{\cal E}_{{m}}<E}\sigma_{\rm
+H}^{(m)}=e^{2}/{h}\sum_{{\cal E}_{{m}}<E}C_{m}
+\end{equation*}
+其中 $\sigma_{\rm
+H}^{(m)}$ 和 $C_{m}$分别为第$m$个完全填充能带的霍尔电导和陈数。
+
+
 \section{扩展Haldane模型}
+Haldane模型定义在二维蜂窝型晶格中，也就是最近发现的石墨烯的晶格结构，对应的布拉维晶格为六角晶格，基矢为$\textbf{a}_1,\textbf{a}_2$，如图~\ref{fig:HClattice}所示。为了说明量子霍尔效应的存在并不依赖于朗道能级，Haldane在1988年提出了一个紧束缚模型，考虑在六角晶格中引入交错磁通，即在次近邻的跃迁中引入相位，同时保证整个体系中的净磁通为零。通过简单的计算，Haldane得到了两条陈数非零的非平庸能带，得到了无朗道能级的整数粒子霍尔效应，现在也称为量子反常霍尔效应（Quantum anomoulous Hall effect），或陈绝缘体（Chern insulator）。
 
-
-
-\begin{figure}[ht]
-  \begin{minipage}[c]{0.5\textwidth}
-  \includegraphics[width=\textwidth]{figure/HC_bulk}
-  \hspace{5in}
-  \end{minipage}
-  \begin{minipage}[c]{0.5\textwidth}
-  \includegraphics[width=\textwidth]{figure/HC_edge}
-  \end{minipage}
-\caption{扩展Haldane模型}
-\label{fig:TFB_HC}
+\begin{figure}
+ \centering
+ \includegraphics[width=0.5\textwidth]{figure/HC_lattice}
+ \caption{蜂窝型晶格}
+ \label{fig:HClattice}
 \end{figure}
+
+为了能够在Haldane模型中得到平坦度较高的拓扑平带，这里进一步引入了次次近邻格点间的跃迁，我们把它称为扩展Haldane模型。具体的搜索方法是，在一个较大的参数空间内，通过遍历其中的组合参数，计算相应的平坦度，其中最大的认为是拓扑平带。对于二能级系统，平坦度定义为体能带的能隙与当前能带的比值。哈密顿量为：
+\begin{eqnarray}
+H_{\rm HC}= &-&t^{\prime}\sum_{\langle\langle\mathbf{r}\mathbf{r}^{
+\prime}\rangle\rangle}
+\left[c^{\dagger}_{\mathbf{r}^{ \prime}}c_{\mathbf{r}}\exp\left(i\phi_{\mathbf{r}^{ \prime}\mathbf{r}}\right)+\textrm{H.c.}\right]\\
+&-&t\sum_{\langle\mathbf{r}\mathbf{r}^{ \prime}\rangle}
+\left[c^{\dagger}_{\mathbf{r}^{\prime}}c_{\mathbf{r}}+\textrm{H.c.}\right]
+-t^{\prime\prime}\sum_{\langle\langle\langle\mathbf{r}\mathbf{r}^{
+\prime}\rangle\rangle\rangle}
+\left[c^{\dagger}_{\mathbf{r}^{\prime}}c_{\mathbf{r}}+\textrm{H.c.}\right]\nonumber
+\label{eq:hc}
+\end{eqnarray}
+其中$c^{\dagger}_{\mathbf{r}}$为格点$\mathbf{r}$处的费米子产生算符,  $\langle\dots\rangle$，$\langle\langle\dots\rangle\rangle$ 和 $\langle\langle\langle\dots\rangle\rangle\rangle$ 分别表示最近邻、次近邻以及第三近邻的格点对。
+选取\cite{}文献中的参数，可以得到一个平坦度为 的拓扑平带。根据\ref{eq:kubo2}可以计算出两条能带的陈数分别为$\pm1$
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{figure/HC_spectrum}
+\caption{扩展Haldane模型}
+\label{fig:hc_spectrum}
+\end{figure}
+%\begin{figure}[ht]
+%  \begin{minipage}[c]{0.5\textwidth}
+%  \includegraphics[width=\textwidth]{figure/HC_bulk}
+%  \hspace{5in}
+%  \end{minipage}
+%  \begin{minipage}[c]{0.5\textwidth}
+%  \includegraphics[width=\textwidth]{figure/HC_edge}
+%  \end{minipage}
+%\caption{扩展Haldane模型}
+%\label{fig:TFB_HC}
+%\end{figure}
 
 
 \section{Kagome格子模型}
+Kagome晶格由 组成，每个元胞中含有三套子个，晶格示意图以及基矢如图~\ref{fig:KGlattice}所示。
 
-\begin{figure}[ht]
-  \begin{minipage}[c]{0.5\textwidth}
-  \includegraphics[width=\textwidth]{figure/KG_bulk}
-  \hspace{5in}
-  \end{minipage}
-  \begin{minipage}[c]{0.5\textwidth}
-  \includegraphics[width=\textwidth]{figure/KG_edge}
-  \end{minipage}
-\caption{Kagome格子模型}
-\label{fig:TFB_KG}
+
+\begin{figure}
+ \centering
+ \includegraphics[width=0.5\textwidth]{figure/KG_lattice}
+ \caption{kagome型晶格}
+ \label{fig:KGlattice}
 \end{figure}
+
+哈密顿量为：
+\begin{eqnarray}
+H_{\rm KG}= &-&t\sum_{\langle\mathbf{r}\mathbf{r}^{ \prime}\rangle}
+\left[c^{\dagger}_{\mathbf{r}^{ \prime}}c_{\mathbf{r}}\exp\left(i\phi_{\mathbf{r}^{ \prime}\mathbf{r}}\right)+\textrm{H.c.}\right]\nonumber\\
+&-&t^{\prime}\sum_{\langle\langle\mathbf{r}\mathbf{r}^{\prime}\rangle\rangle}
+\left[c^{\dagger}_{\mathbf{r}^{\prime}}c_{\mathbf{r}}+\textrm{H.c.}\right]%\nonumber\\
+\label{eq:kg}
+\end{eqnarray}
+
+选取\cite{}文献中的参数，可以得到一个平坦度为 的拓扑平带。根据\ref{eq:kubo2}可以计算出两条能带的陈数分别为$\pm1$.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\textwidth]{figure/HC_spectrum}
+\caption{扩展Haldane模型}
+\label{fig:hc_spectrum}
+\end{figure}
+
+%\begin{figure}[ht]
+%  \begin{minipage}[c]{0.5\textwidth}
+%  \includegraphics[width=\textwidth]{figure/KG_bulk}
+%  \hspace{5in}
+%  \end{minipage}
+%  \begin{minipage}[c]{0.5\textwidth}
+%  \includegraphics[width=\textwidth]{figure/KG_edge}
+%  \end{minipage}
+%\caption{Kagome格子模型}
+%\label{fig:TFB_KG}
+%\end{figure}
+
+为了更好的显示拓扑能带与普通绝缘体的区别，这里也做了边缘态的计算。

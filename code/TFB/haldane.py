@@ -44,8 +44,8 @@ t2 = -.6*np.exp(0.4j*np.pi)
 t3 = .58
 
 # calculate bulk or edge spectrum
-#glue_edgs = True
-glue_edgs = False
+glue_edgs = True
+#glue_edgs = False
 
 # set on-site energies
 my_model.set_onsite([0.0]*len(orb))
@@ -71,6 +71,55 @@ my_model.set_hop(t3, 0, 1, [-1, 1])
 my_model.set_hop(t3, 0, 1, [-1,-1])
 ######################################################
 
+def plot_energybands(bulkE, edgeE):
+    """Plot both bulk and edge energy bands, respectively.
+
+    Parameters:
+    ===========
+    bulkE : ndarray
+    edgeE : ndarray
+    returns : figure
+    """
+#   fig, (ax1, ax2) = plt.subplots(1,2, figsize=(8,6))
+#   for idx, (ax, e) in enumerate(zip((ax1, ax2), (bulkE, edgeE))):
+#       for eigenvalues in e:
+#           ax.plot(eigenvalues, 'b-')
+#           if  0<idx<N-1 and (idx*n%N==0 or (idx+1)*n%N==0):
+#               ax.plot(eigenvalues, "r-")
+#   plt.tight_layout()
+
+#   fig = plt.figure(figsize=(8,6))
+#   ax1 = fig.add_axes([0.0, 0.0, 0.5, 1.0])
+#   ax2 = fig.add_axes([0.5, 0.0, 0.5, 1.0])
+#   fig, (ax1, ax2) = plt.subplots(1,2, figsize=(9,6))
+
+    fig = plt.figure(figsize=(8,5))
+    ax1 = plt.subplot(121)
+    for level in bulkE:
+        ax1.plot(kpts, level, 'b-')
+#   plt.title(title)
+    plt.title('(a)')
+    plt.xlim(kpts.min(), kpts.max())
+    plt.xlabel("$k$")
+    plt.ylabel("$E$")
+
+    ax2 = plt.subplot(122)
+    for idx, level in enumerate(edgeE):
+        if idx in [N/2, N/2-1]:
+            ax2.plot(kpts, level, 'r-')
+        else:
+            ax2.plot(kpts, level, 'b-')
+#   plt.title(title)
+    plt.title('(b)')
+    plt.xlim(kpts.min(), kpts.max())
+    plt.xlabel("$k$")
+#   plt.ylabel("$E$")
+
+    fig.tight_layout()
+
+    return fig
+
+
 
 # make the supercell of the model
 #vector = [[1,0],[0,1]] # original
@@ -78,7 +127,10 @@ my_model.set_hop(t3, 0, 1, [-1,-1])
 sc_model=my_model
 
 # now make a slab of the supercell
+import copy
+sc_model2 = copy.deepcopy(sc_model)
 slab_model=sc_model.cut_piece(30,0,glue_edgs=glue_edgs)
+slab_model2=sc_model2.cut_piece(30,0,glue_edgs=(glue_edgs+1)%2)
 
 # visualize slab unit cell
 #(fig,ax)=slab_model.visualize(0,1)
@@ -94,6 +146,7 @@ slab_model=sc_model.cut_piece(30,0,glue_edgs=glue_edgs)
 path=[-0.5,.5]
 kpts=tb.k_path(path,100)
 evals=slab_model.solve_all(kpts)
+evals2=slab_model2.solve_all(kpts)
 
 # plotting of band structure
 print 'Plotting bandstructure...'
@@ -120,6 +173,10 @@ plt.title(title)
 plt.xlim(kpts.min(), kpts.max())
 plt.xlabel("$k$")
 plt.ylabel("$E$")
+
+figs = plot_energybands(evals, evals2)
+#plt.show()
+figs.savefig('HC_spectrum.pdf')
 
 # make an PDF figure of a plot
 figname = '{}_{}.pdf'.format(info[1], 'bulk' if glue_edgs else 'edge')

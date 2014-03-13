@@ -9,9 +9,9 @@
 
 % 字号选项: c5size 五号(默认) cs4size 小四
 % 双面打印（注意字号设置）
-%\documentclass[cs4size, a4paper, twoside]{sjtuthesis} 
+\documentclass[cs4size, a4paper, twoside]{sjtuthesis} 
 % 单面打印（注意字号设置）
-\documentclass[cs4size, a4paper, oneside, openany]{sjtuthesis} 
+%\documentclass[cs4size, a4paper, oneside, openany]{sjtuthesis} 
 
 
 % \usepackage[sectionbib]{chapterbib}%每章都用参考文献
@@ -51,29 +51,29 @@
 %% 封面
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-% 中文封面内容(关注内容而不是形式)
-\title{分数陈绝缘体中的边缘激发效应}
-%\author{李\quad{}四}
-\author{骆炜炜}
-\advisor{王一飞教授}
-\degree{硕士}
-\defenddate{2014年4月16日}
-\school{浙江师范大学}
-\institute{数理与信息工程学院}
-\studentnumber{2011210562}
-\major{凝聚态物理}
-
-% 英文封面内容(关注内容而不是表现形式)
+%% 中文封面内容(关注内容而不是形式)
+\title{分数陈绝缘体中的边缘激发}
+%%\author{李\quad{}四}
+%\author{骆炜炜}
+%\advisor{王一飞教授}
+%\degree{硕士}
+%\defenddate{2014年4月16日}
+%\school{浙江师范大学}
+%\institute{数理与信息工程学院}
+%\studentnumber{2011210562}
+%\major{凝聚态物理}
+%
+%% 英文封面内容(关注内容而不是表现形式)
 \englishtitle{Edge excitations in fractional Chern insulators}
-\englishauthor{\textsc{Si Li}}
-\englishadvisor{Prof. \textsc{San Zhang}}
-\englishschool{Shanghai Jiao Tong University}
-%\englishinstitute{\textsc{Depart of XXX, School of XXX} \\
-%  \textsc{Zhejiang Normal University} \\
-%  \textsc{JinHua, P.R.China}}
-\englishdegree{Master}
-\englishmajor{Condensed matter physics}
-\englishdate{April, 2014}
+%\englishauthor{\textsc{Si Li}}
+%\englishadvisor{Prof. \textsc{San Zhang}}
+%\englishschool{Shanghai Jiao Tong University}
+%%\englishinstitute{\textsc{Depart of XXX, School of XXX} \\
+%%  \textsc{Zhejiang Normal University} \\
+%%  \textsc{JinHua, P.R.China}}
+%\englishdegree{Master}
+%\englishmajor{Condensed matter physics}
+%\englishdate{April, 2014}
 
 % 1.封面
 \maketitle
@@ -142,8 +142,9 @@
 % 8.参考文献
 % 使用 BibTeX
 % 包含参考文献文件.bib
-\bibliography{reference/}
-
+\nocite{*}
+%\bibliography{reference/TFB.bib}
+\bibliography{reference/tfb.bib}
 %% 个人简历(硕士学位论文没有个人简历要求)
 % \include{contents/resume}
 
