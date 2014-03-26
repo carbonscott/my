@@ -9,10 +9,11 @@
 
 % 字号选项: c5size 五号(默认) cs4size 小四
 % 双面打印（注意字号设置）
-\documentclass[cs4size, a4paper, twoside]{sjtuthesis} 
+%\documentclass[cs4size, a4paper, twoside]{sjtuthesis} 
 % 单面打印（注意字号设置）
 %\documentclass[cs4size, a4paper, oneside, openany]{sjtuthesis} 
-
+%双面，任意开页
+\documentclass[cs4size, a4paper, twoside, openany]{sjtuthesis} 
 
 % \usepackage[sectionbib]{chapterbib}%每章都用参考文献
 
@@ -144,7 +145,7 @@
 % 包含参考文献文件.bib
 \nocite{*}
 %\bibliography{reference/TFB.bib}
-\bibliography{reference/tfb.bib}
+\bibliography{reference/TFB.bib}
 %% 个人简历(硕士学位论文没有个人简历要求)
 % \include{contents/resume}
 

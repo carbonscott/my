@@ -93,7 +93,7 @@ def plot_energybands(bulkE, edgeE):
 #   ax2 = fig.add_axes([0.5, 0.0, 0.5, 1.0])
 #   fig, (ax1, ax2) = plt.subplots(1,2, figsize=(9,6))
 
-    fig = plt.figure(figsize=(8,5))
+    fig = plt.figure(figsize=(10,5))
     ax1 = plt.subplot(121)
     for level in bulkE:
         ax1.plot(kpts, level, 'b-')
